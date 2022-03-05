@@ -1,17 +1,20 @@
 version: 2.1
 jobs:
     build:
-        docker:
-            - image: circleci/golang:1.16
+        # docker:
+        #     - image: circleci/golang:1.16
 
         steps:
         - checkout
         - run:
             name: Install libcryptsetup dependencies
-            command: sudo apt-get install -y libcryptsetup12 libcryptsetup-dev
+            command: sudo apt-get install -y libcryptsetup12 libcryptsetup-dev golang-1.16
         - run:
             name: Display Golang executable
             command: which go
+        # - run:
+        #     name: Run tests
+        #     command: sudo /usr/local/go/bin/go test -v ./...
         - run:
             name: Run tests
-            command: sudo /usr/local/go/bin/go test -v ./...
+            command: sudo go test -v ./...
