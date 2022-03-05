@@ -10,5 +10,8 @@ jobs:
             name: Install libcryptsetup dependencies
             command: sudo apt-get install -y libcryptsetup12 libcryptsetup-dev
         - run:
+            name: Display Golang executable
+            command: which go
+        - run:
             name: Run tests
             command: sudo go test -v ./...
