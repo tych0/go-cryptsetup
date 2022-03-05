@@ -8,7 +8,7 @@ jobs:
         - checkout
         - run:
             name: Install libcryptsetup dependencies
-            command: sudo apt-get install -y libcryptsetup-12 libcryptsetup-dev
+            command: sudo apt-get install -y libcryptsetup12 libcryptsetup-dev
         - run:
             name: Run tests
             command: sudo go test -v ./...
